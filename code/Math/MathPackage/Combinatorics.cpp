@@ -1,3 +1,4 @@
+#definet long long 在
 //const int mod=998244353;
 const int mod=1e9+7;
 //const int mod=1e5+7;
@@ -38,6 +39,6 @@ struct Comb{
 	}
 	
 	int inv(int x){
-		return invfact[x]*invfact[x-1]%mod;
+		return invfact[x]*fact[x-1]%mod;
 	}
 }com(1000005);
