@@ -1,4 +1,4 @@
-#definet long long 在
+#define int long long
 //const int mod=998244353;
 const int mod=1e9+7;
 //const int mod=1e5+7;
