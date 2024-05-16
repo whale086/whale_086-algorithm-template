@@ -25,7 +25,7 @@ int excrt(vector<pair<int,int> >q){
 		int x,y;
 		int g=exgcd(M,mod,x,y);
 		if(r%g){
-			q.clear();//////////清空
+			q.clear();/////////清空
 			return -1;
 		}
 		x=(x*r/g%(mod/g));
