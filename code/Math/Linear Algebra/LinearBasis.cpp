@@ -1,7 +1,7 @@
 struct LinearBasis{
 	int a[70]={0};
 	bool flag=0;
-	void insert(int x){// 插入操作
+	void insert(int x){// 插入操作 
 		for(int i=60;~i;i--){
 			if(x&(1ll<<i)){
 				if(!a[i]){
