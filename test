@@ -5,57 +5,49 @@ static const int maxl=3e6+5;
 int a['z'+1][maxl];
 int num[maxl];
 struct Trie{
-	int cnt;
-	Trie():cnt(0){}
-	size_t turn(char x){
-//		if(abs(x-'5')<5)return x-'0'+55;
-//		if(x>='a')return x-'a';
-//		return x-'A'+30;
-		return x;
-	}
-	void clear(){
-		for(int i=0;i<'z'+1;i++)fill(a[i],a[i]+cnt+1,0);
-		cnt=0;
-		fill(num,num+cnt+1,0);
-	}
-	void insert(string &s){
-		int now=0;
-		for(int i=0;i<s.size();i++){
-			if(!a[turn(s[i])][now]){
-				a[turn(s[i])][now]=++cnt;
-			}
-			now=a[turn(s[i])][now];
-			num[now]++;
-		}
-	}
-	int check(string &s){
-		int now=0;
-		for(int i=0;i<s.size();i++){
-			if(!a[turn(s[i])][now])return 0;
-			now=a[turn(s[i])][now];
-		}
-		return num[now];
-	}
+    int cnt;
+    Trie():cnt(0){}
+    void clear(){
+        for(int i=0;i<'z'+1;i++)fill(a[i],a[i]+cnt+1,0);
+        fill(num,num+cnt+1,0);
+        cnt=0;
+    }
+    void insert(string &s){
+        int now=0;
+        for(int i=0;s[i];i++){
+            if(!a[s[i]][now])a[s[i]][now]=++cnt;
+            now=a[s[i]][now];
+            num[now]++;
+        }
+    }
+    int check(string &s){
+        int now=0;
+        for(int i=0;s[i];i++){
+            if(!a[s[i]][now])return 0;
+            now=a[s[i]][now];
+        }
+        return num[now];
+    }
 }trie;
 void solve(){
-	int n,q;
-	cin>>n>>q;
-	trie.clear();
-	string s;
-	for(int i=0;i<n;i++){
-		cin>>s;
-		trie.insert(s);
-	}
-	while(q--){
-		cin>>s;
-		cout<<trie.check(s)<<"\n";
-	}
-	return;
+    int n,q;
+    cin>>n>>q;
+    trie.clear();
+    string s;
+    for(int i=0;i<n;i++){
+        cin>>s;
+        trie.insert(s);
+    }
+    while(q--){
+        cin>>s;
+        cout<<trie.check(s)<<"\n";
+    }
+    return;
 }
 
 signed main(){
-	int ____=1;
-	cin>>____;
-	while(____--)solve();
-	return 0;
+    int ____=1;
+    cin>>____;
+    while(____--)solve();
+    return 0;
 }
