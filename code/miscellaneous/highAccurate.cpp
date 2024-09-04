@@ -80,18 +80,18 @@ private :
 	vector<int> val_;
 };
 
-int main()
-{
-	Bigint a, b;
-	cin >> a >> b;
-	cout << a + b << endl;
-	if (a > b) cout << a - b << endl;
-	else cout << b - a << endl;
-	cout << a * b << endl;
-	cout << a / b << endl;
-	cout << a % b << endl;
-	return 0;
-}
+// int main()
+// {
+// 	Bigint a, b;
+// 	cin >> a >> b;
+// 	cout << a + b << endl;
+// 	if (a > b) cout << a - b << endl;
+// 	else cout << b - a << endl;
+// 	cout << a * b << endl;
+// 	cout << a / b << endl;
+// 	cout << a % b << endl;
+// 	return 0;
+// }
 
 Bigint::Bigint(long long num) : sign_(0)
 {
